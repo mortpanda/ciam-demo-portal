@@ -19,9 +19,9 @@ import {
   encapsulation: ViewEncapsulation.None
 })
 export class PortalComponent implements OnInit {
-  private UserLoggedIn: any;
-  private strWelcome: any;
-  private authService = new OktaAuth(this.oktaSDKAuth.config);
+  UserLoggedIn: any;
+  strWelcome: any;
+  authService = new OktaAuth(this.oktaSDKAuth.config);
   strUserSession: Boolean;
   durationInSeconds = 7;
 

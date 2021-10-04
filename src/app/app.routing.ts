@@ -1,6 +1,6 @@
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
-import { HomeComponent } from './home/home.component';
+
 import { PortalComponent } from 'app/portal/portal.component';
 import { PortalDisplaypageComponent }from 'app/portal-displaypage/portal-displaypage.component';
 import { OktaAuthGuard, OktaAuthService, OktaCallbackComponent } from '@okta/okta-angular';

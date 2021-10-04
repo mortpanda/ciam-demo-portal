@@ -39,7 +39,7 @@ import {A11yModule} from '@angular/cdk/a11y';
 import {MatChipsModule} from '@angular/material/chips'; 
 import {MatAutocompleteModule} from '@angular/material/autocomplete'; 
 import {MatCheckboxModule} from '@angular/material/checkbox';
-import { HomeComponent } from './home/home.component'; 
+
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 import { PortalComponent } from './portal/portal.component';
 import { PortalDisplaypageComponent } from './portal-displaypage/portal-displaypage.component';
@@ -54,7 +54,7 @@ import { IntegrationsComponent } from './integrations/integrations.component';
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HomeComponent,
+    
     PortalComponent,
     PortalDisplaypageComponent,
     LoginPageComponent,

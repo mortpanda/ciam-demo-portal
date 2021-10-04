@@ -98,8 +98,8 @@ export class AuthService {
             // user has details about the user
             //console.log(user);
             // console.log(JSON.stringify(user));
-
-            window.location.replace(window.location.origin);
+            console.log(OktaRedirect);
+            window.location.replace(OktaRedirect);
             // window.location.replace(this.OktaConfig.strRedirectURL);
           })
           .catch(function (err) {
@@ -113,7 +113,7 @@ export class AuthService {
   }
 
   OktaLogout(bar?: string) {
-
+    
     this.authClient.tokenManager.clear();
     this.authClient.signOut({ postLogoutRedirectUri: this.LogoutURI, idToken: this.idToken });
     location.reload();
