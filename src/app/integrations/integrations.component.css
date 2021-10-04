@@ -1,0 +1,61 @@
+.fxcontainer{
+    padding-top : 100px!important;
+}
+
+.item1{
+    color:#00297A!important;
+    padding-top: 10px!important;
+    padding-left: 10px!important;
+    padding-right: 10px!important;
+    text-align: center!important;
+    z-index: 2;
+    justify-content: center!important;
+    display: block!important;
+
+}
+
+.item{
+    background-color: white;
+    width: 300px;
+    height: 250px;
+    z-index: 1;
+    display: block!important;
+    justify-content: center!important;
+    margin: 10px !important;
+    text-align: center!important;
+
+}
+
+.site_title{
+    font-size: 20px!important;
+    margin-bottom: 10px!important;
+    content: fit-content!important;
+    display: block!important;
+}
+
+.site_content{
+    font-size: medium!important;
+    text-align: left!important;
+    color:#00297A!important;
+    display: block!important;
+
+}
+
+.mat-h2, .mat-title, .mat-typography h2 {
+    margin-bottom: 2px!important;
+    display: block!important;
+}
+
+
+.okta-white-logo{
+    /* width: 500px!important; */
+    /* position: relative; */
+    z-index: 1!important;
+
+    /* justify-content: center!important; */
+    /* align-items: center!important; */
+    text-align: center!important;
+    display: block!important;
+   width: 35%!important;
+    height: auto!important;
+}
