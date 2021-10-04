@@ -40,26 +40,17 @@ typescript                      4.1.6
 
 ## How to run this tool
 - In a directory of your choice,
-
 - Clone the repo,
-
 - Enter the directory,
-
 - Install pakackages
-
 `npm install`
 - Run the tool
-
 `ng serve`
 - Open the tool
-
 `http://localhost:4200`
-
 - Update the below file with the information from your org,
 If this file does not exist, you will need to create this.
 `src/app/shared/okta-config.ts`
-
-
 - Inside the files, the below section will need to be updated with your setting.
 
 ```
