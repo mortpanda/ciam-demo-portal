@@ -13,17 +13,11 @@ This website is a simple demo portal site, which contains links to external site
 There are 3 x groups in the org that determine the links that get displayed on the portal.
 
 
-**ANGULAR-CIAM-DEMO-PORTAL-WORDPRESS**
+**ANGULAR-CIAM-DEMO-PORTAL-WORDPRESS** - If the user is a member of this group, a link will be displayed to a member-only CMS.
 
-If the user is a member of this group, a link will be displayed to a member-only CMS.
+**ANGULAR-CIAM-DEMO-PORTAL-WORDPRESS-BB** - If the user is a member of this group, a link will be displayed to a member-only bulletin board.
 
-**ANGULAR-CIAM-DEMO-PORTAL-WORDPRESS-BB**
-
-If the user is a member of this group, a link will be displayed to a member-only bulletin board.
-
-**ANGULAR-CIAM-DEMO-PORTAL-MOODLE**
-
-If the user is a member of this group, a link will be displayed to an online learning site.
+**ANGULAR-CIAM-DEMO-PORTAL-MOODLE** - If the user is a member of this group, a link will be displayed to an online learning site.
 
 ## Development Environment
 ```
