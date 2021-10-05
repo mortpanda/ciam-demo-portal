@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ViewEncapsulation } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { OktaSDKAuthService } from 'app/shared/okta/okta-auth-service';
+import { OktaConfig } from "app/shared/okta/okta-config";
 import {
   OktaAuth,
   OktaAuthOptions,
@@ -30,9 +31,9 @@ export class PortalComponent implements OnInit {
 
   strGroupMemberships: any;
   arrGroups: any;
+  
 
-
-  constructor(private _snackBar: MatSnackBar, private oktaSDKAuth: OktaSDKAuthService) { }
+  constructor(private _snackBar: MatSnackBar, private oktaSDKAuth: OktaSDKAuthService,private OktaConfig: OktaConfig) { }
 
   async ngOnInit() {
     document.getElementById("memberSite").style.visibility = "hidden";
@@ -50,6 +51,7 @@ export class PortalComponent implements OnInit {
         } else {
           // not logged in
           //console.log(exists);
+          
           return exists
         }
       });
@@ -58,6 +60,8 @@ export class PortalComponent implements OnInit {
       case false:
       //alert(this.oktaSDKAuth.config.redirectUri)
       // this.openSnackBar()
+      console.log(this.OktaConfig.strPostLogoutURL);
+      window.location.replace(this.OktaConfig.strPostLogoutURL);
 
       case true:
         var strSession = this.authService.token.getWithoutPrompt({
