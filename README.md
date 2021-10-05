@@ -5,7 +5,7 @@ Japanese CIAM Demo Portal Site
 <img src="/Capture.PNG" alt="drawing" width="600"/>
 
 **Please note this is NOT an official Okta tool, and the Okta support team does NOT provide support for this.**
-This is merely a personal projct, and Okta's support do not offer support for this tool.
+This is merely a personal projct, and NOT supported by Okta's support team.
 Also, the website is currently in Japanese ONLY, and there are no plans for translation into English.
 
 ## What does this tool do?
