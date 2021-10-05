@@ -10,6 +10,17 @@ Also, the website is currently in Japanese ONLY, and there are no plans for tran
 
 ## What does this tool do?
 This website is a simple demo portal site, which contains links to external sites, and can be used to demo Single Sign-On using OIDC.
+There are 3 x groups in the org that determine the links that get displayed on the portal.
+
+
+**ANGULAR-CIAM-DEMO-PORTAL-WORDPRESS**
+If the user is a member of this group, a link will be displayed to a member-only CMS.
+
+**ANGULAR-CIAM-DEMO-PORTAL-WORDPRESS-BB**
+If the user is a member of this group, a link will be displayed to a member-only bulletin board.
+
+**ANGULAR-CIAM-DEMO-PORTAL-MOODLE**
+If the user is a member of this group, a link will be displayed to an online learning site.
 
 ## Development Environment
 ```

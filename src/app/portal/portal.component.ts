@@ -23,11 +23,24 @@ export class PortalComponent implements OnInit {
   strWelcome: any;
   authService = new OktaAuth(this.oktaSDKAuth.config);
   strUserSession: Boolean;
-  durationInSeconds = 7;
+
+  strMemberSite: any;
+  strMemberBBS: any;
+  strMemberMoodle: any;
+
+  strGroupMemberships: any;
+  arrGroups: any;
+
 
   constructor(private _snackBar: MatSnackBar, private oktaSDKAuth: OktaSDKAuthService) { }
 
   async ngOnInit() {
+    document.getElementById("memberSite").style.visibility = "hidden";
+    document.getElementById("memberBBS").style.visibility = "hidden";
+    document.getElementById("memberMoodle").style.visibility = "hidden";
+
+    // document.getElementById("memberMoodle").style.visibility = "visible";
+
     this.strUserSession = await this.authService.session.exists()
       .then(function (exists) {
         if (exists) {
@@ -43,11 +56,11 @@ export class PortalComponent implements OnInit {
 
     switch (this.strUserSession == true) {
       case false:
-        //alert(this.oktaSDKAuth.config.redirectUri)
-        // this.openSnackBar()
+      //alert(this.oktaSDKAuth.config.redirectUri)
+      // this.openSnackBar()
 
       case true:
-        var strSession = this.authService.token.getWithPopup({
+        var strSession = this.authService.token.getWithoutPrompt({
           responseType: 'id_token', // or array of types
           sessionToken: 'testSessionToken', // optional if the user has an existing Okta session           
         })
@@ -56,17 +69,39 @@ export class PortalComponent implements OnInit {
             //console.log(res.tokens);
             //console.log(res.state);
             var strUser = tokens.idToken.claims.email;
-            //console.log(strUser);
+            // console.log(strUser);
             return tokens.idToken.claims.email;
           }
           )
 
+        this.strGroupMemberships = await this.authService.token.getWithoutPrompt()
+        // console.log(this.strGroupMemberships.tokens.idToken.claims.okta_groups);
+        // console.log(this.strGroupMemberships.tokens.idToken.claims.okta_groups.length);
+        this.arrGroups = this.strGroupMemberships.tokens.idToken.claims.okta_groups;
+
+        for (var i = 0; i < this.strGroupMemberships.tokens.idToken.claims.okta_groups.length; i++) {
+          //console.log(this.arrGroups[i]);
+          switch ((this.arrGroups[i].toUpperCase())) {
+            case "ANGULAR-CIAM-DEMO-PORTAL-MOODLE":
+              console.log("found group " + this.arrGroups[i].toUpperCase());
+              document.getElementById("memberMoodle").style.visibility = "visible";
+              break;
+
+            case "ANGULAR-CIAM-DEMO-PORTAL-WORDPRESS":
+              console.log("found group " + this.arrGroups[i].toUpperCase());
+              document.getElementById("memberSite").style.visibility = "visible";
+              break;
+
+            case "ANGULAR-CIAM-DEMO-PORTAL-WORDPRESS-BB":
+              console.log("found group " + this.arrGroups[i].toUpperCase());
+              document.getElementById("memberBBS").style.visibility = "visible";
+              break;
+          }
+        }
         const strUserGet = async () => {
           const strUseremail = await strSession;
-          //console.log(strUseremail)
           this.UserLoggedIn = strUseremail;
           this.strWelcome = "ようこそ"
-
         }
         if (location.pathname == "/profile") {
           //If not in the profile page, don't get the current user
@@ -77,7 +112,7 @@ export class PortalComponent implements OnInit {
     }
   }
 
-  
+
 
 }
 
