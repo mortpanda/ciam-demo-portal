@@ -30,7 +30,7 @@ export class SdkLoginComponent implements OnInit {
     
     if (await this.authService.checkAuthenticated()) {
       await console.log("logged in, redirecting you to the home page");
-      window.location.replace(this.OktaConfig.strPortalAddress);
+      window.location.replace(this.OktaConfig.strRedirectURL);
       
     }
   }
