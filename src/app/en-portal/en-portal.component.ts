@@ -12,14 +12,13 @@ import {
   UserClaims,
   TokenParams
 } from '@okta/okta-auth-js'
-
 @Component({
-  selector: 'app-portal',
-  templateUrl: './portal.component.html',
-  styleUrls: ['./portal.component.css'],
+  selector: 'app-en-portal',
+  templateUrl: './en-portal.component.html',
+  styleUrls: ['./en-portal.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class PortalComponent implements OnInit {
+export class EnPortalComponent implements OnInit {
   UserLoggedIn: any;
   strWelcome: any;
   authService = new OktaAuth(this.oktaSDKAuth.config);
@@ -113,7 +112,7 @@ export class PortalComponent implements OnInit {
         const strUserGet = async () => {
           const strUseremail = await strSession;
           this.UserLoggedIn = strUseremail;
-          this.strWelcome = "ようこそ"
+          this.strWelcome = "Welcome"
         }
         if (location.pathname == "/profile") {
           //If not in the profile page, don't get the current user
@@ -127,5 +126,4 @@ export class PortalComponent implements OnInit {
 
 
 }
-
 

@@ -1,29 +1,29 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
+
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { AuthService } from "app/shared/okta/okta-authentication";
+import { AuthService } from "app/shared/okta/okta-en-authentication";
 
 import { ViewEncapsulation } from '@angular/core';
 // import { OktaSDKAuthService } from 'app/shared/okta/okta-auth-service';
 import { OktaConfig } from "app/shared/okta/okta-config";
 
+
 @Component({
-  selector: 'app-sdk-login',
-  templateUrl: './sdk-login.component.html',
-  styleUrls: ['./sdk-login.component.css'],
-  encapsulation: ViewEncapsulation.None
+  selector: 'app-en-sdk-login',
+  templateUrl: './en-sdk-login.component.html',
+  styleUrls: ['./en-sdk-login.component.css']
 })
-export class SdkLoginComponent implements OnInit {
+export class EnSdkLoginComponent implements OnInit {
   loginform: FormGroup;
   public loginInvalid: boolean;
   private formSubmitAttempt: boolean;
   private returnUrl: string;
   strLanguage: any;
-
   // constructor(private fb: FormBuilder, private authService: AuthService,private OktaConfig: OktaConfig,private oktaSDKAuth: OktaSDKAuthService) {}
   constructor(private fb: FormBuilder, private authService: AuthService,private OktaConfig: OktaConfig) {}
 
   async ngOnInit() {
-    this.strLanguage = '日本語';
+    this.strLanguage = 'English';
     this.loginform = this.fb.group({
       username: ["", Validators.email],
       password: ["", Validators.required]
@@ -31,7 +31,7 @@ export class SdkLoginComponent implements OnInit {
     
     if (await this.authService.checkAuthenticated()) {
       await console.log("logged in, redirecting you to the home page");
-      window.location.replace(this.OktaConfig.strRedirectURL);
+      window.location.replace(this.OktaConfig.strEnPortal);
       
     }
   }
@@ -40,7 +40,7 @@ export class SdkLoginComponent implements OnInit {
     console.log("event fired");
     console.log("loginInvalid", this.loginInvalid);
     console.log("formSubmitAttempt", this.formSubmitAttempt);
-    console.log("returnUrl", this.OktaConfig.strRedirectURL);
+    console.log("returnUrl", this.OktaConfig.strEnPortal);
 
     this.loginInvalid = false;
     this.formSubmitAttempt = false;

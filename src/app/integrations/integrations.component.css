@@ -1,5 +1,18 @@
+.logo{
+    position: relative;
+    z-index: 1;
+    
+    text-align: center!important;
+    padding-top: 0!important;
+}
+
+.logo_item{
+    width: 100%;
+}
+
 .fxcontainer{
-    padding-top : 100px!important;
+    padding-top : 15px!important;
+ 
 }
 
 .item1{
@@ -16,18 +29,19 @@
 
 .item{
     background-color: white;
-    width: 300px;
-    height: 250px;
+    width: 250px;
+    height: 230px;
     z-index: 1;
     display: block!important;
     justify-content: center!important;
-    margin: 10px !important;
+    margin: 5px !important;
     text-align: center!important;
+    border-radius: 10px!important;
 
 }
 
 .site_title{
-    font-size: 20px!important;
+    /* font-size: 12px!important; */
     margin-bottom: 10px!important;
     content: fit-content!important;
     display: block!important;
@@ -38,6 +52,7 @@
     text-align: left!important;
     color:#00297A!important;
     display: block!important;
+    font-size: 12px!important;
 
 }
 
@@ -47,15 +62,14 @@
 }
 
 
-.okta-white-logo{
-    /* width: 500px!important; */
-    /* position: relative; */
+/* .okta-white-logo{
+    
     z-index: 1!important;
 
-    /* justify-content: center!important; */
-    /* align-items: center!important; */
+    
     text-align: center!important;
     display: block!important;
    width: 35%!important;
     height: auto!important;
 }
+ */

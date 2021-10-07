@@ -48,6 +48,13 @@ import { OktaAuthModule } from '@okta/okta-angular';
 import { WhoisoktaComponent } from './whoisokta/whoisokta.component';
 import { SdkLoginComponent } from './sdk-login/sdk-login.component';
 import { IntegrationsComponent } from './integrations/integrations.component';
+import { EnLoginPageComponent } from './en-login-page/en-login-page.component';
+import { EnSdkLoginComponent } from './en-sdk-login/en-sdk-login.component';
+import { EnFooterComponent } from './shared/en-footer/en-footer.component';
+import { EnWhoisoktaComponent } from './en-whoisokta/en-whoisokta.component';
+import { EnPortalDisplaypageComponent } from './en-portal-displaypage/en-portal-displaypage.component';
+import { EnPortalComponent } from './en-portal/en-portal.component';
+
 
 @NgModule({
   declarations: [
@@ -61,6 +68,13 @@ import { IntegrationsComponent } from './integrations/integrations.component';
     WhoisoktaComponent,
     SdkLoginComponent,
     IntegrationsComponent,
+    EnLoginPageComponent,
+    EnSdkLoginComponent,
+    EnFooterComponent,
+    EnWhoisoktaComponent,
+    EnPortalDisplaypageComponent,
+    EnPortalComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -96,8 +110,8 @@ import { IntegrationsComponent } from './integrations/integrations.component';
     MatCheckboxModule,
     MatSnackBarModule,
     HttpClientModule,
-    OktaAuthModule
-    
+    OktaAuthModule,
+    MatSelectModule
 
   ],
   providers: [OktaSDKAuthService], 

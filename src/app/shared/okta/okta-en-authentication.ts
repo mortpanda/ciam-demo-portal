@@ -49,7 +49,7 @@ export class AuthService {
     const OktaClientID = this.OktaConfig.strClientID;
     const OktaBaseURI = this.OktaConfig.strBaseURI;
     const OktaLang = this.OktaConfig.strLang;
-    const OktaRedirect = this.OktaConfig.strRedirectURL;
+    const OktaRedirect = this.OktaConfig.strEnPortal;
     const OktaBrand = this.OktaConfig.strBrand;
     const OktaPostlogoutURI = this.OktaConfig.strPostLogoutURL;
     const OktaIssuer = this.OktaConfig.strIssuer;
@@ -59,7 +59,7 @@ export class AuthService {
     var oktaSignIn = new OktaSignIn({
       clientId: OktaClientID,
       baseUrl: OktaBaseURI,
-      language: 'ja',
+      language: 'en',
       redirectUri: OktaRedirect,
       colors: {
         brand: OktaBrand,
@@ -78,12 +78,11 @@ export class AuthService {
 
     oktaSignIn.authClient.token.getUserInfo().then(function (user) {
       
-
       console.log("Hello, " + user.email + "! You are *still* logged in! :)");
       //document.getElementById("logout").style.display = 'block';
     }, function (error) {
       oktaSignIn.showSignInToGetTokens({
-        el: '#okta-widget-container'
+        el: '#okta-en-widget-container'
       }).then(function (tokens) {
         oktaSignIn.authClient.tokenManager.setTokens(tokens);
         oktaSignIn.remove();

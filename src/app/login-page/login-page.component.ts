@@ -24,7 +24,9 @@ export class LoginPageComponent implements OnInit {
     // });
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    document.getElementById("japanese").style.visibility = "hidden";
+    document.getElementById("english").style.visibility = "visible";
   }
 
 }

@@ -9,7 +9,9 @@ export class PortalDisplaypageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    document.getElementById("japanese").style.visibility = "hidden";
+    document.getElementById("english").style.visibility = "visible";
   }
 
 }

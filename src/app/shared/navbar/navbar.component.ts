@@ -11,10 +11,14 @@ import {OktaSDKAuthService} from 'app/shared/okta/okta-auth-service';
 import { Router } from '@angular/router';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 
+interface Food {
+    value: string;
+    viewValue: string;
+  }
+
+
 declare const OktaMFA: any;
 declare const RemoveMFAWidget: any;
-
-
 
 @Component({
     selector: 'app-navbar',
@@ -29,6 +33,11 @@ export class NavbarComponent implements OnInit {
     private sidebarVisible: boolean;
     public Userfullname: any;
 
+    foods: Food[] = [
+        {value: 'steak-0', viewValue: 'Steak'},
+        {value: 'pizza-1', viewValue: 'Pizza'},
+        {value: 'tacos-2', viewValue: 'Tacos'}
+      ];
     
     
     constructor(public location: Location, private element : ElementRef,public _matdialog: MatDialog, private OktaAuthClient : OktaSDKAuthService,private router: Router) {
