@@ -6,7 +6,7 @@ Japanese CIAM Demo Portal Site
 
 **Please note this is NOT an official Okta tool, and the Okta support team does NOT provide support for this.**
 This is merely a personal projct, and NOT supported by Okta's support team.
-Also, the website is currently in Japanese ONLY, and there are no plans for translation into English.
+
 
 ## What does this tool do?
 This website is a simple demo portal site, which contains links to external sites, and can be used to demo Single Sign-On using OIDC.
