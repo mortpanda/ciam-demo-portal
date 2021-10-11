@@ -3,6 +3,8 @@ Japanese CIAM Demo Portal Site
 
 <img src="/Capture2.PNG" alt="drawing" width="600"/>
 <img src="/Capture.PNG" alt="drawing" width="600"/>
+<img src="/Capture3.PNG" alt="drawing" width="600"/>
+<img src="/Capture4.PNG" alt="drawing" width="600"/>
 
 **Please note this is NOT an official Okta tool, and the Okta support team does NOT provide support for this.**
 This is merely a personal projct, and NOT supported by Okta's support team.

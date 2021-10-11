@@ -91,16 +91,17 @@ export class AuthService {
         const idToken = tokens.idToken;
         const accessToken = tokens.accessToken;
         console.log("Hello, " + idToken.claims.email + "! You just logged in! :)");
-        // console.log(idToken);
-        // console.log(accessToken);
+        //console.log(idToken);
+        //console.log(accessToken);
 
 
         return oktaSignIn.authClient.token.getUserInfo(accessToken, idToken)
           .then(function (user) {
             // user has details about the user
-            //console.log(user);
+            console.log("Verified user");
+            console.log(user);
             // console.log(JSON.stringify(user));
-            console.log(OktaRedirect);
+            console.log("redirecting you to " + OktaRedirect);
             window.location.replace(OktaRedirect);
             // window.location.replace(this.OktaConfig.strRedirectURL);
           })
@@ -118,6 +119,7 @@ export class AuthService {
     
     this.authClient.tokenManager.clear();
     this.authClient.signOut({ postLogoutRedirectUri: this.LogoutURI, idToken: this.idToken });
+    
     location.reload();
   }
 

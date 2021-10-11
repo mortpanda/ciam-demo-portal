@@ -14,10 +14,10 @@
     display: flex!important;    
 }
 
-.btn_wp{
-    background-image: url(assets/img/Logo_Okta_Japan_Blue_RGB.svg);
+.btn_wpbb{
+    background-image: url(assets/img/customer_support.png);
     background-repeat:no-repeat;
-    background-size: auto;
+    background-size: contain;
     background-position: top;
     background-color: #a9a9b1;
     justify-content: center!important;
@@ -30,10 +30,43 @@
     color: white;
 }
 
-.btn_wpbb{
-    background-image: url(assets/img/Logo_Okta_Japan_Blue_RGB.svg);
+.btn_profile{
+    background-image: url(assets/img/user-mgt.png);
     background-repeat:no-repeat;
-    background-size: auto;
+    background-size: contain;
+    background-position: top;
+    background-color: #a9a9b1;
+    justify-content: center!important;
+    display: flex!important;
+    height: 100px;
+    width: 200px;
+    text-align: center;
+    padding: 70px!important;
+    color: white;
+    
+}
+
+.btn_dentaku{
+    background-image: url(assets/img/api.png);
+    background-repeat:no-repeat;
+    background-size: contain;
+    background-position: top;
+    background-color: #a9a9b1;
+    justify-content: center!important;
+    display: flex!important;
+    height: 100px;
+    width: 200px;
+    text-align: center;
+    padding: 70px!important;
+    color: white;
+    
+}
+
+
+.btn_member{
+    background-image: url(assets/img/member.png);
+    background-repeat:no-repeat;
+    background-size: contain;
     background-position: top;
     background-color: #a9a9b1;
     justify-content: center!important;
@@ -46,10 +79,10 @@
 }
 
 .btn_moodle{
-    background-image: url(assets/img/Logo_Okta_Japan_Blue_RGB.svg);
+    background-image: url(assets/img/edu.png);
     background-repeat:no-repeat;
-    background-size: auto;
-    background-position: top;
+    background-size: contain;
+    background-position: top!important;
     background-color: #a9a9b1;
     justify-content: center!important;
     display: flex!important;

@@ -30,17 +30,17 @@ export class SdkLoginComponent implements OnInit {
     });
     
     if (await this.authService.checkAuthenticated()) {
-      await console.log("logged in, redirecting you to the home page");
+      await console.log("logged in, redirecting you to the portal page : " + this.OktaConfig.strRedirectURL);
       window.location.replace(this.OktaConfig.strRedirectURL);
       
     }
   }
 
   async onSubmit() {
-    console.log("event fired");
-    console.log("loginInvalid", this.loginInvalid);
-    console.log("formSubmitAttempt", this.formSubmitAttempt);
-    console.log("returnUrl", this.OktaConfig.strRedirectURL);
+    // console.log("event fired");
+    // console.log("loginInvalid", this.loginInvalid);
+    // console.log("formSubmitAttempt", this.formSubmitAttempt);
+    console.log("redirectUri = ", this.OktaConfig.strRedirectURL);
 
     this.loginInvalid = false;
     this.formSubmitAttempt = false;
@@ -50,7 +50,8 @@ export class SdkLoginComponent implements OnInit {
         var password = this.loginform.get("password").value;
         await this.authService.login(username, password);
         //} catch (err) {
-        //alert(this.authService.strstateToken)      
+        console.log("stateToken = " + this.authService.strstateToken);
+        console.log("Injecting the stateToken into the Widget");
         this.loginInvalid = true;
       //}
     //} else 
@@ -61,6 +62,8 @@ export class SdkLoginComponent implements OnInit {
     }
   }
   logout(){
+    
     this.authService.OktaLogout();
+    
     }
 }

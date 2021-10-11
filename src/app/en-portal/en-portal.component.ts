@@ -35,6 +35,7 @@ export class EnPortalComponent implements OnInit {
   constructor(private _snackBar: MatSnackBar, private oktaSDKAuth: OktaSDKAuthService,private OktaConfig: OktaConfig) { }
 
   async ngOnInit() {
+    console.log("Hiding restricted content until user group membership is verified.....")
     document.getElementById("memberSite").style.visibility = "hidden";
     document.getElementById("memberBBS").style.visibility = "hidden";
     document.getElementById("memberMoodle").style.visibility = "hidden";
@@ -44,7 +45,7 @@ export class EnPortalComponent implements OnInit {
       .then(function (exists) {
         if (exists) {
           // logged in
-          console.log(exists);
+          console.log("User session to Okta : " + exists);
           return exists
         } else {
           // not logged in
@@ -58,7 +59,7 @@ export class EnPortalComponent implements OnInit {
       case false:
       //alert(this.oktaSDKAuth.config.redirectUri)
       // this.openSnackBar()
-      console.log(this.OktaConfig.strPostLogoutURL);
+      console.log("User session not found, redirecting to " + this.OktaConfig.strPostLogoutURL);
       window.location.replace(this.OktaConfig.strPostLogoutURL);
 
       case true:
@@ -68,6 +69,7 @@ export class EnPortalComponent implements OnInit {
         })
           .then(function (res) {
             var tokens = res.tokens;
+            console.log("Displaying user token information");
             console.log(res.tokens);
             //console.log(res.state);
             var strUser = tokens.idToken.claims.email;
@@ -126,4 +128,5 @@ export class EnPortalComponent implements OnInit {
 
 
 }
+
 

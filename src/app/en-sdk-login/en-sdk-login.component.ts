@@ -19,6 +19,7 @@ export class EnSdkLoginComponent implements OnInit {
   private formSubmitAttempt: boolean;
   private returnUrl: string;
   strLanguage: any;
+
   // constructor(private fb: FormBuilder, private authService: AuthService,private OktaConfig: OktaConfig,private oktaSDKAuth: OktaSDKAuthService) {}
   constructor(private fb: FormBuilder, private authService: AuthService,private OktaConfig: OktaConfig) {}
 
@@ -30,17 +31,17 @@ export class EnSdkLoginComponent implements OnInit {
     });
     
     if (await this.authService.checkAuthenticated()) {
-      await console.log("logged in, redirecting you to the home page");
+      await console.log("logged in, redirecting you to the portal page : " + this.OktaConfig.strEnPortal);
       window.location.replace(this.OktaConfig.strEnPortal);
       
     }
   }
 
   async onSubmit() {
-    console.log("event fired");
-    console.log("loginInvalid", this.loginInvalid);
-    console.log("formSubmitAttempt", this.formSubmitAttempt);
-    console.log("returnUrl", this.OktaConfig.strEnPortal);
+    // console.log("event fired");
+    // console.log("loginInvalid", this.loginInvalid);
+    // console.log("formSubmitAttempt", this.formSubmitAttempt);
+    console.log("redirectUri = ", this.OktaConfig.strEnPortal);
 
     this.loginInvalid = false;
     this.formSubmitAttempt = false;
@@ -50,7 +51,8 @@ export class EnSdkLoginComponent implements OnInit {
         var password = this.loginform.get("password").value;
         await this.authService.login(username, password);
         //} catch (err) {
-        //alert(this.authService.strstateToken)      
+        console.log("stateToken = " + this.authService.strstateToken);
+        console.log("Injecting the stateToken into the Widget");
         this.loginInvalid = true;
       //}
     //} else 
@@ -61,6 +63,8 @@ export class EnSdkLoginComponent implements OnInit {
     }
   }
   logout(){
+    
     this.authService.OktaLogout();
+    
     }
 }
