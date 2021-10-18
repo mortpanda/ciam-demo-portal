@@ -1,4 +1,4 @@
-# ciam-angular-portal-profile
+# ciam-demo-portal
 Japanese CIAM Demo Portal Site
 
 <img src="/Capture2.PNG" alt="drawing" width="600"/>
