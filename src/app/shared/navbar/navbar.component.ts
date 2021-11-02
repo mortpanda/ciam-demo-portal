@@ -33,11 +33,11 @@ export class NavbarComponent implements OnInit {
     private sidebarVisible: boolean;
     public Userfullname: any;
 
-    foods: Food[] = [
-        {value: 'steak-0', viewValue: 'Steak'},
-        {value: 'pizza-1', viewValue: 'Pizza'},
-        {value: 'tacos-2', viewValue: 'Tacos'}
-      ];
+    // foods: Food[] = [
+    //     {value: 'steak-0', viewValue: 'Steak'},
+    //     {value: 'pizza-1', viewValue: 'Pizza'},
+    //     {value: 'tacos-2', viewValue: 'Tacos'}
+    //   ];
     
     
     constructor(public location: Location, private element : ElementRef,public _matdialog: MatDialog,private OktaConfig: OktaConfig, private OktaAuthClient : OktaSDKAuthService,private router: Router) {
