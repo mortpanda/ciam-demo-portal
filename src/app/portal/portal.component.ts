@@ -37,7 +37,7 @@ export class PortalComponent implements OnInit {
 
   async ngOnInit() {
     console.log("Hiding restricted content until user group membership is verified.....")
-    document.getElementById("memberSite").style.visibility = "hidden";
+    document.getElementById("memberGnews").style.visibility = "hidden";
     document.getElementById("memberBBS").style.visibility = "hidden";
     document.getElementById("memberMoodle").style.visibility = "hidden";
     document.getElementById("memberDentaku").style.visibility = "hidden";
@@ -93,10 +93,10 @@ export class PortalComponent implements OnInit {
               document.getElementById("memberMoodle").style.visibility = "visible";
               break;
 
-            case "ANGULAR-CIAM-DEMO-PORTAL-WORDPRESS":
+            case "ANGULAR-CIAM-DEMO-PORTAL-GNEWS":
               console.log("found group " + this.arrGroups[i].toUpperCase());
-              console.log("Displaying Wordpress to the user....")
-              document.getElementById("memberSite").style.visibility = "visible";
+              console.log("Displaying GNews site to the user....")
+              document.getElementById("memberGnews").style.visibility = "visible";
               break;
 
             case "ANGULAR-CIAM-DEMO-PORTAL-WORDPRESS-BB":

@@ -63,8 +63,8 @@
 }
 
 
-.btn_member{
-    background-image: url(assets/img/member.png);
+.btn_gnews{
+    background-image: url(assets/img/okta_globe_medium.png);
     background-repeat:no-repeat;
     background-size: contain;
     background-position: top;
@@ -76,6 +76,7 @@
     text-align: center;
     padding: 70px!important;
     color: white;
+    margin: 3px!important;
 }
 
 .btn_moodle{
