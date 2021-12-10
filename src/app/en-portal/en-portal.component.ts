@@ -30,9 +30,9 @@ export class EnPortalComponent implements OnInit {
 
   strGroupMemberships: any;
   arrGroups: any;
-  
 
-  constructor(private _snackBar: MatSnackBar, private oktaSDKAuth: OktaSDKAuthService,private OktaConfig: OktaConfig) { }
+
+  constructor(private _snackBar: MatSnackBar, private oktaSDKAuth: OktaSDKAuthService, private OktaConfig: OktaConfig) { }
 
   async ngOnInit() {
     console.log("Hiding restricted content until user group membership is verified.....")
@@ -40,7 +40,7 @@ export class EnPortalComponent implements OnInit {
     document.getElementById("memberBBS").style.visibility = "hidden";
     document.getElementById("memberMoodle").style.visibility = "hidden";
     document.getElementById("memberDentaku").style.visibility = "hidden";
-    
+
     this.strUserSession = await this.authService.session.exists()
       .then(function (exists) {
         if (exists) {
@@ -50,17 +50,17 @@ export class EnPortalComponent implements OnInit {
         } else {
           // not logged in
           //console.log(exists);
-          
+
           return exists
         }
       });
 
     switch (this.strUserSession == true) {
       case false:
-      //alert(this.oktaSDKAuth.config.redirectUri)
-      // this.openSnackBar()
-      console.log("User session not found, redirecting to " + this.OktaConfig.strPostLogoutURL);
-      window.location.replace(this.OktaConfig.strPostLogoutURL);
+        //alert(this.oktaSDKAuth.config.redirectUri)
+        // this.openSnackBar()
+        console.log("User session not found, redirecting to " + this.OktaConfig.strPostLogoutURL);
+        window.location.replace(this.OktaConfig.strPostLogoutURL);
 
       case true:
         var strSession = this.authService.token.getWithoutPrompt({
@@ -92,23 +92,29 @@ export class EnPortalComponent implements OnInit {
               document.getElementById("memberMoodle").style.visibility = "visible";
               break;
 
-            case "ANGULAR-CIAM-DEMO-PORTAL-WORDPRESS":
+            case "ANGULAR-CIAM-DEMO-PORTAL-GNEWS":
               console.log("found group " + this.arrGroups[i].toUpperCase());
-              console.log("Displaying Wordpress to the user....")
-              document.getElementById("memberSite").style.visibility = "visible";
+              console.log("Displaying GNews site to the user....")
+              document.getElementById("memberGnews").style.visibility = "visible";
               break;
 
-            case "ANGULAR-CIAM-DEMO-PORTAL-WORDPRESS-BB":
+            // case "ANGULAR-CIAM-DEMO-PORTAL-WORDPRESS-BB":
+            //   console.log("found group " + this.arrGroups[i].toUpperCase());
+            //   console.log("Displaying Wordpress BBS to the user....")
+            //   document.getElementById("memberBBS").style.visibility = "visible";
+            //   break;
+
+            case "ANGULAR-CIAM-DEMO-CONDUIT":
               console.log("found group " + this.arrGroups[i].toUpperCase());
-              console.log("Displaying Wordpress BBS to the user....")
+              console.log("Displaying Conduit BBS to the user....")
               document.getElementById("memberBBS").style.visibility = "visible";
               break;
 
-              case "ANGULAR-CIAM-DEMO-PORTAL-CALCULATOR":
-                console.log("found group " + this.arrGroups[i].toUpperCase());
-                console.log("Displaying Dentaku to the user....")
-                document.getElementById("memberDentaku").style.visibility = "visible";
-                break;
+            case "ANGULAR-CIAM-DEMO-PORTAL-CALCULATOR":
+              console.log("found group " + this.arrGroups[i].toUpperCase());
+              console.log("Displaying Dentaku to the user....")
+              document.getElementById("memberDentaku").style.visibility = "visible";
+              break;
           }
         }
         const strUserGet = async () => {
