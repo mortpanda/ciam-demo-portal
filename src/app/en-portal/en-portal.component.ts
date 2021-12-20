@@ -36,7 +36,7 @@ export class EnPortalComponent implements OnInit {
 
   async ngOnInit() {
     console.log("Hiding restricted content until user group membership is verified.....")
-    document.getElementById("memberSite").style.visibility = "hidden";
+    document.getElementById("memberGnews").style.visibility = "hidden";
     document.getElementById("memberBBS").style.visibility = "hidden";
     document.getElementById("memberMoodle").style.visibility = "hidden";
     document.getElementById("memberDentaku").style.visibility = "hidden";
@@ -104,11 +104,17 @@ export class EnPortalComponent implements OnInit {
             //   document.getElementById("memberBBS").style.visibility = "visible";
             //   break;
 
-            case "ANGULAR-CIAM-DEMO-CONDUIT":
+            
+            case "ANGULAR-CIAM-DEMO-PORTAL-BBS":
               console.log("found group " + this.arrGroups[i].toUpperCase());
-              console.log("Displaying Conduit BBS to the user....")
+              console.log("Displaying BBS to the user....")
               document.getElementById("memberBBS").style.visibility = "visible";
               break;
+            // case "ANGULAR-CIAM-DEMO-CONDUIT":
+            //   console.log("found group " + this.arrGroups[i].toUpperCase());
+            //   console.log("Displaying Conduit BBS to the user....")
+            //   document.getElementById("memberBBS").style.visibility = "visible";
+            //   break;
 
             case "ANGULAR-CIAM-DEMO-PORTAL-CALCULATOR":
               console.log("found group " + this.arrGroups[i].toUpperCase());

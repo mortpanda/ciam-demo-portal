@@ -105,11 +105,17 @@ export class PortalComponent implements OnInit {
             //   document.getElementById("memberBBS").style.visibility = "visible";
             //   break;
 
-            case "ANGULAR-CIAM-DEMO-CONDUIT":
+            case "ANGULAR-CIAM-DEMO-PORTAL-BBS":
               console.log("found group " + this.arrGroups[i].toUpperCase());
-              console.log("Displaying Conduit BBS to the user....")
+              console.log("Displaying BBS to the user....")
               document.getElementById("memberBBS").style.visibility = "visible";
               break;
+
+            // case "ANGULAR-CIAM-DEMO-CONDUIT":
+            //   console.log("found group " + this.arrGroups[i].toUpperCase());
+            //   console.log("Displaying Conduit BBS to the user....")
+            //   document.getElementById("memberBBS").style.visibility = "visible";
+            //   break;
 
             case "ANGULAR-CIAM-DEMO-PORTAL-CALCULATOR":
               console.log("found group " + this.arrGroups[i].toUpperCase());
